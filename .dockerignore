@@ -1,5 +1,5 @@
 .git/
-.github/
+.github/workflows/**
 .gitignore
 bin/
 idea/
