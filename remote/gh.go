@@ -86,7 +86,13 @@ func getOwnerRepo() (string, string) {
 }
 
 func getBranchProtectionConfigPath() string {
-	return os.Getenv(path)
+	var prefix string
+
+	if !strings.HasPrefix(os.Getenv(path), "/") {
+		prefix = "/action/"
+	}
+
+	return fmt.Sprintf("%v%v", prefix, os.Getenv(path))
 }
 
 // BranchProtection struct
