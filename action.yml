@@ -1,0 +1,18 @@
+name: 'Branch Protection'
+description: 'Create a github branch protection over specific branch or branches'
+author: 'Hatzel Renteria'
+inputs:
+  path:
+    description: 'Path where is store the branch protection config file. This file must be a yaml file.'
+    default: '.github/config/branch_protection.yml'
+    required: false
+  repository:
+    description: 'Owner and Repository name. Default env variable is GITHUB_REPOSITORY'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  color: purple
+  icon: shield
