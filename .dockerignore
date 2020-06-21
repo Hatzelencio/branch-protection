@@ -1,0 +1,7 @@
+.git/
+.github/workflows/**
+.gitignore
+bin/
+idea/
+Dockerfile
+README.md
