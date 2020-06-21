@@ -18,9 +18,10 @@ import (
 )
 
 const (
-	token  = "GITHUB_TOKEN"
-	ghrepo = "GITHUB_REPOSITORY"
-	path   = "INPUT_PATH"
+	token       = "GITHUB_TOKEN"
+	ghrepo      = "GITHUB_REPOSITORY"
+	ghworkspace = "GITHUB_WORKSPACE"
+	path        = "INPUT_PATH"
 )
 
 var (
@@ -86,10 +87,10 @@ func getOwnerRepo() (string, string) {
 }
 
 func getBranchProtectionConfigPath() string {
-	var prefix string
+	var prefix = ""
 
 	if !strings.HasPrefix(os.Getenv(path), "/") {
-		prefix = "/action/"
+		prefix = fmt.Sprintf("%v/", os.Getenv(ghworkspace))
 	}
 
 	return fmt.Sprintf("%v%v", prefix, os.Getenv(path))
@@ -126,7 +127,6 @@ func getBranchProtectionRequests() ([]BranchProtection, error) {
 // UpdateBranchProtection update a protection by branch
 func UpdateBranchProtection() error {
 	var wg sync.WaitGroup
-
 	requests, err := getBranchProtectionRequests()
 
 	if err != nil {
