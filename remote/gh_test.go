@@ -23,7 +23,7 @@ func init() {
 	cli = NewGithubClient(nil, &mocks.MockClient{})
 }
 
-func TestMergeSuccess(t *testing.T) {
+func TestUpdateBranchProtectionSuccess(t *testing.T) {
 	var buf bytes.Buffer
 	configFile := createTmpBranchProtectionConfigFile()
 
