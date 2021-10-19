@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/ghodss/yaml"
-	"github.com/google/go-github/v32/github"
+	"github.com/google/go-github/v39/github"
 	"github.com/hatzelencio/branch-protection/utils"
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"

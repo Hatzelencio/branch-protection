@@ -3,7 +3,7 @@ package remote
 import (
 	"bytes"
 	"fmt"
-	"github.com/google/go-github/v32/github"
+	"github.com/google/go-github/v39/github"
 	"github.com/hatzelencio/branch-protection/utils/mocks"
 	"golang.org/x/net/context"
 	"io/ioutil"
