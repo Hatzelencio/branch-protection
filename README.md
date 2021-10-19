@@ -1,6 +1,6 @@
 ## Branch Protection
 
-> Version: v0.0.0
+> Version: v1.0.0
 
 ------
 
@@ -55,7 +55,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Update branch protection
-        uses: Hatzelencio/branch-protection@v0.0.0
+        uses: Hatzelencio/branch-protection@v1.0.0
         env:
           GITHUB_TOKEN: ${{secrets.ACCESS_TOKEN}}
 ```
@@ -71,7 +71,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Update branch protection
-        uses: Hatzelencio/branch-protection@v0.0.0
+        uses: Hatzelencio/branch-protection@v1.0.0
         with:
           path: .github/config/another_config.yml
         env:
@@ -87,7 +87,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Strategy to lock branches
-        uses: Hatzelencio/branch-protection@v0.0.0
+        uses: Hatzelencio/branch-protection@v1.0.0
         with:
           path: .github/config/lock_branch_config.yml
         env:
@@ -101,7 +101,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Strategy to unlock branches
-        uses: Hatzelencio/branch-protection@v0.0.0
+        uses: Hatzelencio/branch-protection@v1.0.0
         with:
           path: .github/config/unlock_branch_config.yml
         env:
